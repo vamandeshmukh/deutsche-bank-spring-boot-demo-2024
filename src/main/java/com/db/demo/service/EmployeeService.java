@@ -12,18 +12,17 @@ import com.db.demo.model.Employee;
 public class EmployeeService implements IEmployeeService {
 
 	List<Employee> empList = new ArrayList<>(Arrays.asList(new Employee(101, "Sonu", 90.50),
-			new Employee(102, "monu", 95.75), new Employee(103, "Tonu", 92.25)));
+			new Employee(102, "Monu", 95.75), new Employee(103, "Tonu", 92.25)));
 
 	@Override
 	public List<Employee> getAllEmployees() {
-		// return the empList 
+		// return the empList
 		return empList;
 	}
 
 	@Override
 	public Employee getEmployeeById(Integer id) {
-		// find the matching Employee object from empList 
-		return null;
+		// find the matching Employee object from empList
 	}
 
 	@Override
