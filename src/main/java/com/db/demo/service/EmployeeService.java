@@ -16,16 +16,13 @@ public class EmployeeService implements IEmployeeService {
 
 	@Override
 	public List<Employee> getAllEmployees() {
+		// return the empList 
 		return empList;
 	}
 
 	@Override
 	public Employee getEmployeeById(Integer id) {
-
-//		find data from 
-//		empList 
-//		and return 
-
+		// find the matching Employee object from empList 
 		return null;
 	}
 
