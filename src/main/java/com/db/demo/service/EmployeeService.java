@@ -1,7 +1,5 @@
 package com.db.demo.service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,31 +20,33 @@ public class EmployeeService implements IEmployeeService {
 	}
 
 	@Override
-	public Employee getEmployeeById(Integer id) {
+	public Employee getEmployeeById(Integer id) { 
+		// your business logic needed 
 		return empRepository.findById(id).get();
 	}
 
 	@Override
 	public List<Employee> getEmployeesByName(String name) {
-		// TODO Auto-generated method stub
+		// your business logic needed 
 		return null;
 	}
 
 	@Override
 	public Employee addEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		return null;
+		// your business logic needed 
+		return empRepository.save(employee);
 	}
 
 	@Override
 	public Employee updateEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		return null;
+		// your business logic needed 
+		return empRepository.save(employee);
 	}
 
 	@Override
 	public Employee deleteEmployee(Integer id) {
-		// TODO Auto-generated method stub
+		// your business logic needed 
+		empRepository.deleteById(id);
 		return null;
 	}
 
