@@ -1,12 +1,14 @@
 package com.db.demo.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "emps")
 public class Employee {
 
+	@Id
 	private Integer id;
 	private String name;
 	private Double salary;
