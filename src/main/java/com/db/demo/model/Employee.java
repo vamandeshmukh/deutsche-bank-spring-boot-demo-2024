@@ -1,5 +1,10 @@
 package com.db.demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "emps")
 public class Employee {
 
 	private Integer id;
