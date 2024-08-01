@@ -23,6 +23,9 @@ public class EmployeeService implements IEmployeeService {
 	@Override
 	public Employee getEmployeeById(Integer id) {
 		// find the matching Employee object from empList
+		return empList.stream() /* convert to stream */
+				.filter(e -> e.getId().equals(id)) /* filter the data */
+				.findFirst().orElse(null); /* return if the data available else return null */
 	}
 
 	@Override
