@@ -2,6 +2,8 @@ package com.db.demo.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,14 +15,18 @@ public class EmployeeService implements IEmployeeService {
 	
 	@Autowired
 	EmployeeRepository empRepository;
+	
+	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	public List<Employee> getAllEmployees() {
+		LOG.info("getAllEmployees");
 		return empRepository.findAll();
 	}
 
 	@Override
 	public Employee getEmployeeById(Integer id) { 
+		LOG.info(id.toString());
 		// your business logic needed 
 		return empRepository.findById(id).get();
 	}
@@ -33,6 +39,7 @@ public class EmployeeService implements IEmployeeService {
 
 	@Override
 	public Employee addEmployee(Employee employee) {
+		LOG.info(employee.toString());
 		// your business logic needed 
 		return empRepository.save(employee);
 	}
