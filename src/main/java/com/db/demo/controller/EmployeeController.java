@@ -2,6 +2,8 @@ package com.db.demo.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +17,8 @@ import com.db.demo.service.IEmployeeService;
 @RestController
 public class EmployeeController {
 
+	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
+
 	@Autowired
 	IEmployeeService empService;
 
@@ -23,19 +27,19 @@ public class EmployeeController {
 
 	@GetMapping("emp")
 	public List<Employee> getAllEmps() {
-		System.out.println("getAllEmps");
+		LOG.info("getAllEmps");
 		return empService.getAllEmployees();
 	}
 
 	@GetMapping("emp/{eid}")
 	public Employee getEmpById(@PathVariable(name = "eid") Integer id) {
-		System.out.println(id);
+		LOG.info(id.toString());
 		return empService.getEmployeeById(id);
 	}
 
 	@PostMapping("emp")
 	public Employee addEmp(@RequestBody Employee employee) {
-		System.out.println(employee.toString());
+		LOG.info(employee.toString());
 		return empService.addEmployee(employee);
 	}
 
